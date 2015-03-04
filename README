@@ -1,0 +1,31 @@
+in linux without using IDE
+
+-to compile:
+go into the direcoty of this README
+make
+
+-to run Monitoring Daemon:
+go into the direcoty 
+java -cp "./lib/*:." project3/ProcCpuMem [brokerIP] [brokerPort] [procName]
+
+Use the ActiveMQ's IP (129.79.49.248) and port number (61616)
+
+-to run Monitoring UI:
+go into the direcoty of this README
+java -cp "./lib/*:." project3/Monitor [brokerIP] [brokerPort] [syncMethod]
+
+syncMethod can be 1 (timestamp) or 2 (average in timeinterval) see report about these two methods
+Use the ActiveMQ's IP (129.79.49.248) and port number (61616)
+
+-using scripts for dynamic provisioning
+after installing pagerank and monitoring daemon
+you can use the following script
+
+computing in bare metal:
+qsub run_pagerank_bm
+
+computing in virtual machine:
+qsub run_pagerank_vm
+
+switch between bare meal and virtual machine
+qsub group09_switch
